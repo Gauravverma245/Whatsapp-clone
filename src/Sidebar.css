@@ -27,6 +27,7 @@
 }
 
 .sidebar__searchContainer > input {
+  flex: 0.75;
   border: none;
   margin-left: 10px;
 }

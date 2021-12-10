@@ -2,15 +2,19 @@ import './App.css';
 import Sidebar from './Sidebar';
 import React from 'react'
 import Chat from './Chat'
-
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
     <div className="app">
-      {/* <h1>Let's build a whatsapp clone!</h1> */}
       <div className="app__body">
-        <Sidebar/>
-        <Chat/>
+        <Router>
+          <Sidebar/>
+          <Routes>
+            <Route path="/rooms/:roomId" element ={ <Chat/>} />
+            <Route path="/" element ={ <Chat/>} />
+          </Routes>
+          </Router>
       </div>
     </div>
   );
