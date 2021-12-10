@@ -15,8 +15,8 @@ function Chat() {
 
     useEffect(() =>{
         if(roomId){
-            db.collection('rooms').doc(roomId).
-            onSnapshot(snapshot => (
+            db.collection('rooms').doc(roomId)
+            .onSnapshot(snapshot => (
                 setRoomName(snapshot.data().name)
             ))
         }
@@ -24,7 +24,7 @@ function Chat() {
 
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000));
-    }, [])
+    }, [roomId])
 
     const sendMessage = (e) =>{
         e.preventDefault();
